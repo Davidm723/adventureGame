@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+
+.matrix-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 2;
+}
+
+.matrix-text{
+    color: #0f0;
+    font-family: monospace;
+    position: relative;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    z-index: 2;
+}
+
+.rain{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000%;
+    height: 1000%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.1) 0,
+        rgba(0, 255, 0, 0.2) 2px,
+        transparent 4px
+    );
+    animation: rain 1000s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rain {
+    0% {
+        transform: translateY(-90%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.title-text{
+    font-size: 80px;
+}
+
+.ascii-art{
+    font-family: monospace;
+    white-space: pre;
+}
+
+.button-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.button{
+    height: 60px;
+    width: 200px;
+    border: 5px dashed #0f0;
+    background-color: rgba(0, 255, 0, 0);
+    color: #0f0;
+    font-family: monospace;
+    font-size: 25px;
+    z-index: 2;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    box-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    margin: 25px;
+}
+
+.button:hover{
+    background-color: #0f0;
+    color: #000;
+    cursor: pointer;
+}
+
+.text-field{
+    display: flex;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.cursor{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 1ch solid #0f0;
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.typewriter-animation{
+    animation: 
+    typewriter 2s steps(50) 500ms 1 normal both,
+    blinkingCursor 750ms steps(50) infinite normal;
+}
+
+@keyframes typewriter {
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+@keyframes blinkingCursor {
+    from {border-right-color: #0f0;}
+    to {border-right-color: transparent;}
+}
