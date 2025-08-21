@@ -62,6 +62,28 @@ function render() {
       });
     });
   }
+  if (currentAreaKey === "dragon" || currentAreaKey === "goldDragon") {
+    const dragon = document.createElement("p");
+    dragon.setAttribute("class", "matrix-text ascii-art");
+    dragon.innerText = `                     _
+                  __~a~_
+                  ~~;  ~_
+    _                ~  ~_                _
+   '_\\\;__._._._._._._]   ~_._._._._._.__;/_'
+   '(/'/'/'/'|'|'|'| (    )|'|'|'|'\\\'\\\'\\\'\\\)'
+   (/ / / /, | | | |(/    \\\) | | | ,\\\ \\\ \\\ \\\)
+  (/ / / / / | | | ^(/    \\\) ^ | | \\\ \\\ \\\ \\\ \\\)
+ (/ / / / /  ^ ^ ^   (/  \\\)    ^ ^  \\\ \\\ \\\ \\\ \\\)
+(/ / / / ^          / (||)|          ^ \\\ \\\ \\\ \\\)
+^ / / ^            M  /||\\\M             ^ \\\ \\\ ^
+ ^ ^                  /||\\\                 ^ ^
+                     //||\\\\
+                     //||\\\\
+                     //||\\\\        
+                     '/||\\\'`;
+    display.appendChild(dragon);
+    console.log(dragon);
+  }
 }
 
 renderTitleScreen();

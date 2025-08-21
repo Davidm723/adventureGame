@@ -105,6 +105,7 @@ body{
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
+    overflow-wrap: normal;
     transform: translateY(-50%);
 }
 
@@ -122,4 +123,29 @@ body{
 @keyframes blinkingCursor {
     from {border-right-color: #0f0;}
     to {border-right-color: transparent;}
+}
+
+@media (min-width: 375px) and (max-width: 768px){
+    .title-text{
+        font-size: 35px;
+    }
+
+    .button-field{
+        flex-direction: column;
+    }
+
+    .cursor{
+        white-space: wrap;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+    .title-text{
+        font-size: 60px;
+    }
+
+    .cursor{
+        white-space: wrap;
+    }
 }
