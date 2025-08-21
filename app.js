@@ -47,11 +47,13 @@ function render() {
       const button = document.createElement("button");
       button.className = "button";
       button.textContent = choice.label;
-      choicesField.appendChild(button);
+      setTimeout(() => {
+        choicesField.appendChild(button);
+      }, 2500);
 
       button.addEventListener("click", () => {
-        if(choice.label === 'Title'){
-          display.innerHTML = '';
+        if (choice.label === "Title") {
+          display.innerHTML = "";
           renderTitleScreen();
           return;
         }
