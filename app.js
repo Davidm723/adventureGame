@@ -1,4 +1,5 @@
 let currentAreaKey = null;
+let winner = false;
 
 const display = document.querySelector(".matrix-container");
 
@@ -65,6 +66,12 @@ function renderTitleScreen() {
   buttonField.appendChild(playBtn);
 }
 
+function checkForWinner(){
+  if(currentAreaKey === 'richEnd' || currentAreaKey === 'poorEnd'){
+    winner = true;
+  }
+}
+
 function render() {
   const area = areas[currentAreaKey];
   display.innerHTML = "";
@@ -129,6 +136,7 @@ function render() {
   if(currentAreaKey === 'richEnd'){
     face.textContent = '(⌐■_■)'
   }
+  checkForWinner();
 }
 
 renderTitleScreen();
