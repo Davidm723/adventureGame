@@ -54,7 +54,7 @@ body{
 }
 
 .title-text{
-    font-size: 80px;
+    font-size: 6pt;
 }
 
 .ascii-art{
@@ -122,4 +122,9 @@ body{
 @keyframes blinkingCursor {
     from {border-right-color: #0f0;}
     to {border-right-color: transparent;}
+}
+
+.face{
+    margin-top: 25px;
+    font-size: 50px;
 }

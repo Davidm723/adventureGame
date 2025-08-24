@@ -4,8 +4,44 @@ const display = document.querySelector(".matrix-container");
 
 function renderTitleScreen() {
   const title = document.createElement("p");
-  title.setAttribute("class", "matrix-text title-text");
-  title.textContent = "Dungeon Adventure";
+  title.setAttribute("class", "matrix-text ascii-art title-text");
+  title.textContent = `      ##### ##                                                                                         
+   /#####  /##                                                                                         
+ //    /  / ###                                                                                        
+/     /  /   ###                                                                                       
+     /  /     ###                                                                                      
+    ## ##      ## ##   ####    ###  /###     /###      /##       /###   ###  /###                      
+    ## ##      ##  ##    ###  / ###/ #### / /  ###  / / ###     / ###  / ###/ #### /                   
+    ## ##      ##  ##     ###/   ##   ###/ /    ###/ /   ###   /   ###/   ##   ###/                    
+    ## ##      ##  ##      ##    ##    ## ##     ## ##    ### ##    ##    ##    ##                     
+    ## ##      ##  ##      ##    ##    ## ##     ## ########  ##    ##    ##    ##                     
+    #  ##      ##  ##      ##    ##    ## ##     ## #######   ##    ##    ##    ##                     
+       /       /   ##      ##    ##    ## ##     ## ##        ##    ##    ##    ##                     
+  /###/       /    ##      /#    ##    ## ##     ## ####    / ##    ##    ##    ##                     
+ /   ########/      ######/ ##   ###   ### ########  ######/   ######     ###   ###                    
+/       ####         #####   ##   ###   ###  ### ###  #####     ####       ###   ###                   
+#                                                 ###                                                  
+ ##                                         ####   ###                                                 
+                                          /######  /#                                                  
+                                         /     ###/                                                    
+                                                                                                       
+        ##            ##                                                                               
+     /####             ##                                                                              
+    /  ###             ##                                       #                                      
+       /##             ## ##                                   ##                                      
+      /  ##            ## ##                                   ##                                      
+      /  ##        ### ##  ##    ###      /##  ###  /###     ######## ##   ####    ###  /###     /##   
+     /    ##      ######### ##    ###    / ###  ###/ #### / ########   ##    ###  / ###/ #### / / ###  
+     /    ##     ##   ####  ##     ###  /   ###  ##   ###/     ##      ##     ###/   ##   ###/ /   ### 
+    /      ##    ##    ##   ##      ## ##    ### ##    ##      ##      ##      ##    ##       ##    ###
+    /########    ##    ##   ##      ## ########  ##    ##      ##      ##      ##    ##       ######## 
+   /        ##   ##    ##   ##      ## #######   ##    ##      ##      ##      ##    ##       #######  
+   #        ##   ##    ##   ##      ## ##        ##    ##      ##      ##      ##    ##       ##       
+  /####      ##  ##    /#   ##      /  ####    / ##    ##      ##      ##      /#    ##       ####    /
+ /   ####    ## / ####/      ######/    ######/  ###   ###     ##       ######/ ##   ###       ######/ 
+/     ##      #/   ###        #####      #####    ###   ###     ##       #####   ##   ###       #####  
+#                                                                                                      
+ ##                                                                                                    `;
   display.appendChild(title);
 
   const art = document.createElement("p");
@@ -49,7 +85,7 @@ function render() {
       button.textContent = choice.label;
       setTimeout(() => {
         choicesField.appendChild(button);
-      }, 2500);
+      }, 2000);
 
       button.addEventListener("click", () => {
         if (choice.label === "Title") {
@@ -61,6 +97,37 @@ function render() {
         render();
       });
     });
+  }
+  const face = document.createElement("p");
+  face.setAttribute("class", "matrix-text ascii-art face");
+  face.textContent = "(ó﹏ò｡)";
+  display.appendChild(face);
+  if(currentAreaKey === 'hallway' || currentAreaKey === 'goldHallway'){
+    face.textContent = '(ᵕ—ᴗ—)'
+  }
+  if(currentAreaKey === 'trapRoom'){
+    face.textContent = '( ˶°ㅁ°) !!'
+  }
+  if(currentAreaKey === 'weaponlessDragon'){
+    face.textContent = '(x_x)'
+  }
+  if(currentAreaKey === 'dragon' || currentAreaKey === 'goldDragon'){
+    face.textContent = '"( - ⌓ - )'
+  }
+  if(currentAreaKey === 'treasureRoom'){
+    face.textContent = '($‿$)'
+  }
+  if(currentAreaKey === 'poorExit'){
+    face.textContent = '(╥﹏╥)'
+  }
+  if(currentAreaKey === 'richExit'){
+    face.textContent = '◝(ᵔᗜᵔ)◜'
+  }
+  if(currentAreaKey === 'poorEnd'){
+    face.textContent = 'ദ്ദി（• ˕ •マ.ᐟ'
+  }
+  if(currentAreaKey === 'richEnd'){
+    face.textContent = '(⌐■_■)'
   }
 }
 
